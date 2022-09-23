@@ -20,7 +20,7 @@ namespace WebAPIBiz4Company.DA
         }
 
         public static List<User> GetAllDataInTable(String spName, String connectionString)
-        {
+        { 
             using (SqlConnection conn = ConnectionDatabase(connectionString))
             {
                 try
