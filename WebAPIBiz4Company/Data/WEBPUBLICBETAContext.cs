@@ -19,6 +19,7 @@ namespace WebAPIBiz4Company.Data
 
         public virtual DbSet<Biz4> Biz4s { get; set; } = null!;
         public virtual DbSet<Job> Jobs { get; set; } = null!;
+        public virtual DbSet<JobApplied> JobApplieds { get; set; } = null!;
         public virtual DbSet<JobApplier> JobAppliers { get; set; } = null!;
         public virtual DbSet<JobDescription> JobDescriptions { get; set; } = null!;
         public virtual DbSet<JobType> JobTypes { get; set; } = null!;
@@ -71,6 +72,31 @@ namespace WebAPIBiz4Company.Data
                     .HasConstraintName("FkJob_jobType");
             });
 
+            modelBuilder.Entity<JobApplied>(entity =>
+            {
+                entity.ToTable("JobApplied");
+
+                entity.Property(e => e.JobAppliedId).HasColumnName("jobAppliedId");
+
+                entity.Property(e => e.JobAppliedApplier).HasColumnName("jobAppliedApplier");
+
+                entity.Property(e => e.JobAppliedDate)
+                    .HasColumnType("date")
+                    .HasColumnName("jobAppliedDate");
+
+                entity.Property(e => e.JobAppliedJob).HasColumnName("jobAppliedJob");
+
+                entity.HasOne(d => d.JobAppliedApplierNavigation)
+                    .WithMany(p => p.JobApplieds)
+                    .HasForeignKey(d => d.JobAppliedApplier)
+                    .HasConstraintName("FKJobApplied_JobApplier");
+
+                entity.HasOne(d => d.JobAppliedJobNavigation)
+                    .WithMany(p => p.JobApplieds)
+                    .HasForeignKey(d => d.JobAppliedJob)
+                    .HasConstraintName("FKJobApplied_Job");
+            });
+
             modelBuilder.Entity<JobApplier>(entity =>
             {
                 entity.ToTable("JobApplier");
@@ -93,8 +119,6 @@ namespace WebAPIBiz4Company.Data
                     .HasMaxLength(255)
                     .HasColumnName("jobApplierFullname");
 
-                entity.Property(e => e.JobApplierJob).HasColumnName("jobApplierJob");
-
                 entity.Property(e => e.JobApplierPhoneNumber)
                     .HasMaxLength(11)
                     .HasColumnName("jobApplierPhoneNumber");
@@ -102,11 +126,6 @@ namespace WebAPIBiz4Company.Data
                 entity.Property(e => e.JobApplierPresentCompany)
                     .HasMaxLength(255)
                     .HasColumnName("jobApplierPresentCompany");
-
-                entity.HasOne(d => d.JobApplierJobNavigation)
-                    .WithMany(p => p.JobAppliers)
-                    .HasForeignKey(d => d.JobApplierJob)
-                    .HasConstraintName("FKJobApplier_jobApplierJob");
             });
 
             modelBuilder.Entity<JobDescription>(entity =>

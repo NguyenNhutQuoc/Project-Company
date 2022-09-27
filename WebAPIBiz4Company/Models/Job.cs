@@ -7,7 +7,7 @@ namespace WebAPIBiz4Company.Models
     {
         public Job()
         {
-            JobAppliers = new HashSet<JobApplier>();
+            JobApplieds = new HashSet<JobApplied>();
             JobDescriptions = new HashSet<JobDescription>();
         }
 
@@ -20,7 +20,7 @@ namespace WebAPIBiz4Company.Models
         public int? JobType { get; set; }
 
         public virtual JobType? JobTypeNavigation { get; set; }
-        public virtual ICollection<JobApplier> JobAppliers { get; set; }
+        public virtual ICollection<JobApplied> JobApplieds { get; set; }
         public virtual ICollection<JobDescription> JobDescriptions { get; set; }
     }
 }
