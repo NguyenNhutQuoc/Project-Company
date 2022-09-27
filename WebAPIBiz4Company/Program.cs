@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WebAPIBiz4Company.ImplementInterface.User;
 using WebAPIBiz4Company.Interface.User;
 
