@@ -11,7 +11,7 @@ namespace WebAPIBiz4Company.Models
         }
 
         public int JobTypeId { get; set; }
-        public string? JobTypeName { get; set; }
+        public string JobTypeName { get; set; } = null!;
 
         public virtual ICollection<Job> Jobs { get; set; }
     }

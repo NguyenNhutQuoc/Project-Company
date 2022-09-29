@@ -69,6 +69,7 @@ namespace WebAPIBiz4Company.Data
                 entity.HasOne(d => d.JobTypeNavigation)
                     .WithMany(p => p.Jobs)
                     .HasForeignKey(d => d.JobType)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FkJob_jobType");
             });
 
@@ -89,17 +90,25 @@ namespace WebAPIBiz4Company.Data
                 entity.HasOne(d => d.JobAppliedApplierNavigation)
                     .WithMany(p => p.JobApplieds)
                     .HasForeignKey(d => d.JobAppliedApplier)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FKJobApplied_JobApplier");
 
                 entity.HasOne(d => d.JobAppliedJobNavigation)
                     .WithMany(p => p.JobApplieds)
                     .HasForeignKey(d => d.JobAppliedJob)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FKJobApplied_Job");
             });
 
             modelBuilder.Entity<JobApplier>(entity =>
             {
                 entity.ToTable("JobApplier");
+
+                entity.HasIndex(e => e.JobApplierEmail, "UQ__JobAppli__2A0EF001DAF6FA62")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.JobApplierPhoneNumber, "UQ__JobAppli__5AE601C61AB69758")
+                    .IsUnique();
 
                 entity.Property(e => e.JobApplierId).HasColumnName("jobApplierId");
 
@@ -119,6 +128,8 @@ namespace WebAPIBiz4Company.Data
                     .HasMaxLength(255)
                     .HasColumnName("jobApplierFullname");
 
+                entity.Property(e => e.JobApplierJob).HasColumnName("jobApplierJob");
+
                 entity.Property(e => e.JobApplierPhoneNumber)
                     .HasMaxLength(11)
                     .HasColumnName("jobApplierPhoneNumber");
@@ -126,12 +137,17 @@ namespace WebAPIBiz4Company.Data
                 entity.Property(e => e.JobApplierPresentCompany)
                     .HasMaxLength(255)
                     .HasColumnName("jobApplierPresentCompany");
+
+                entity.HasOne(d => d.JobApplierJobNavigation)
+                    .WithMany(p => p.JobAppliers)
+                    .HasForeignKey(d => d.JobApplierJob)
+                    .HasConstraintName("FKJobApplier_jobApplierJob");
             });
 
             modelBuilder.Entity<JobDescription>(entity =>
             {
                 entity.HasKey(e => e.Jdid)
-                    .HasName("PK__JobDescr__00350037BDB87608");
+                    .HasName("PK__JobDescr__003500376F22F3D2");
 
                 entity.ToTable("JobDescription");
 
@@ -167,6 +183,12 @@ namespace WebAPIBiz4Company.Data
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("User");
+
+                entity.HasIndex(e => e.UserPhoneNumber, "UQ__User__0121E0E2239C823A")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.UserEmail, "UQ__User__D54ADF5512581E08")
+                    .IsUnique();
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
 

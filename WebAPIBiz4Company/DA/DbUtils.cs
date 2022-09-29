@@ -42,10 +42,7 @@ namespace WebAPIBiz4Company.DA
                                 {
                                     Type type = t.GetType();
                                     PropertyInfo[] propertyInfos = type.GetProperties();
-                                    propertyInfos[count].SetValue(t,
-                                        row[count].GetType().ToString() == "System.DBNull"
-                                            ? row[count].ToString()
-                                            : row[count]);
+                                    propertyInfos[count].SetValue(t, row[count]);
                                     count++;
                                 }
                                 list.Add(t);
@@ -95,11 +92,11 @@ namespace WebAPIBiz4Company.DA
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine(e);
+                    return e.Message;
                 }
                 catch (Exception e)
                 {
-                    Console.Write(e);
+                    return e.Message;
                 }
 
                 return null;

@@ -72,3 +72,12 @@
 /Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/obj/Debug/net6.0/WebAPIBiz4Company.pdb
 /Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/obj/Debug/net6.0/WebAPIBiz4Company.genruntimeconfig.cache
 /Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/obj/Debug/net6.0/ref/WebAPIBiz4Company.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/AspNet.WebApi.CookiesPassthrough.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/System.Net.Http.Formatting.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/System.Web.Http.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.WebApiCompatShim.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/nguyennhutquoc/Projects/WebAPIBiz4Company/WebAPIBiz4Company/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll

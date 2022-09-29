@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using WebAPIBiz4Company.DA;
 using WebAPIBiz4Company.Interface.User;
+using WebAPIBiz4Company.Models.Dto;
 
 namespace WebAPIBiz4Company.ImplementInterface.User
 {
@@ -9,7 +10,7 @@ namespace WebAPIBiz4Company.ImplementInterface.User
     {
         private readonly string _connectionString =
             "Server=125.212.252.5;Database=WEB-PUBLIC-BETA;User Id=db.dev.tts.2022;Password=tVHcz%y!Z333";
-        List<Models.User> IUserActivity.CreateUser(Models.User user)
+        string? IUserActivity.CreateUser(Models.User user)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@userFullname", user.UserFullname));
@@ -18,12 +19,8 @@ namespace WebAPIBiz4Company.ImplementInterface.User
             parameters.Add(new SqlParameter("@userCompanyName", user.UserCompanyName));
             parameters.Add(new SqlParameter("@userQuestion", user.UserQuestion));
             string? notify = DbUtils.RunSpToModifiedDataInTables("spCreateUser", parameters, _connectionString);
-            if (notify is not null && notify.Equals("Created Successfully"))
-            {
-                return DbUtils.GetDataInTable<Models.User>("spGetAllUser", _connectionString);
-            }
 
-            return new List<Models.User>();
+            return notify;
         }
 
         string? IUserActivity.DeleteUser(int id)
@@ -31,10 +28,6 @@ namespace WebAPIBiz4Company.ImplementInterface.User
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@id", id));
             string? notify = DbUtils.RunSpToModifiedDataInTables("spDeleteUser", parameters, _connectionString);
-            if (notify is not null )
-            {
-                notify = "Deleted Successfully";
-            }
             return notify;
         }
 
@@ -76,8 +69,7 @@ namespace WebAPIBiz4Company.ImplementInterface.User
 
             return data[0];
         }
-
-        List<Models.User> IUserActivity.UpdateUser(Models.User user)
+        string? IUserActivity.UpdateUser(Models.User user)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@userId", user.UserId));
@@ -87,12 +79,7 @@ namespace WebAPIBiz4Company.ImplementInterface.User
             parameters.Add(new SqlParameter("@userCompanyName", user.UserCompanyName));
             parameters.Add(new SqlParameter("@userQuestion", user.UserQuestion));
             string? notify = DbUtils.RunSpToModifiedDataInTables("spUpdateUser", parameters, _connectionString);
-            if (notify is not null && notify.Equals("Created Successfully"))
-            {
-                return DbUtils.GetDataInTable<Models.User>("spGetAllUser", _connectionString);
-            }
-
-            return new List<Models.User>();
+            return notify;
         }
     }
 }

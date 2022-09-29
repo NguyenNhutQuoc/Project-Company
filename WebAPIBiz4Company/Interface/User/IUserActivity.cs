@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
 using WebAPIBiz4Company.Models;
+using WebAPIBiz4Company.Models.Dto;
+
 namespace WebAPIBiz4Company.Interface.User
 {
     public interface IUserActivity
@@ -11,9 +13,9 @@ namespace WebAPIBiz4Company.Interface.User
 
         Models.User? GetUserById(int id);
 
-        List<Models.User> CreateUser(Models.User user);
+        string? CreateUser(Models.User user);
 
-        List<Models.User> UpdateUser(Models.User user);
+        string? UpdateUser(Models.User user);
 
         string? DeleteUser(int id);
     }
