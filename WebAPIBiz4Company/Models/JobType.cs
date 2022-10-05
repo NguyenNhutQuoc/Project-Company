@@ -7,12 +7,12 @@ namespace WebAPIBiz4Company.Models
     {
         public JobType()
         {
-            Jobs = new HashSet<Job>();
+            Job = new HashSet<Job>();
         }
 
         public int JobTypeId { get; set; }
-        public string JobTypeName { get; set; } = null!;
+        public string JobTypeName { get; set; }
 
-        public virtual ICollection<Job> Jobs { get; set; }
+        public virtual ICollection<Job> Job { get; set; }
     }
 }

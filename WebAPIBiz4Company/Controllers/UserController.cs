@@ -173,7 +173,7 @@ public class UserController : ControllerBase
         string? notify = _userActivity.DeleteUser(id);
         if (notify.IsNullOrEmpty())
         {
-            return Get();
+            return Ok(user);
         }
 
         if (user is null)

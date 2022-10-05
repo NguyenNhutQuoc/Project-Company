@@ -7,22 +7,21 @@ namespace WebAPIBiz4Company.Models
     {
         public Job()
         {
-            JobApplieds = new HashSet<JobApplied>();
-            JobAppliers = new HashSet<JobApplier>();
-            JobDescriptions = new HashSet<JobDescription>();
+            JobApplied = new HashSet<JobApplied>();
+            JobDescriptionNavigation = new HashSet<JobDescription>();
         }
 
         public int JobId { get; set; }
-        public string JobName { get; set; } = null!;
-        public string JobDescription { get; set; } = null!;
-        public string JobAddress { get; set; } = null!;
-        public string JobWorkingForm { get; set; } = null!;
+        public string JobName { get; set; }
+        public string JobDescription { get; set; }
+        public string JobAddress { get; set; }
+        public string JobWorkingForm { get; set; }
         public DateTime JobDateCreated { get; set; }
         public int JobType { get; set; }
+        public DateTime? JobDateUpdated { get; set; }
 
-        public virtual JobType JobTypeNavigation { get; set; } = null!;
-        public virtual ICollection<JobApplied> JobApplieds { get; set; }
-        public virtual ICollection<JobApplier> JobAppliers { get; set; }
-        public virtual ICollection<JobDescription> JobDescriptions { get; set; }
+        public virtual JobType JobTypeNavigation { get; set; }
+        public virtual ICollection<JobApplied> JobApplied { get; set; }
+        public virtual ICollection<JobDescription> JobDescriptionNavigation { get; set; }
     }
 }

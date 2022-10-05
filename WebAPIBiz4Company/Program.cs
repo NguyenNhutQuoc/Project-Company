@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebAPIBiz4Company.ImplementInterface.User;
+using WebAPIBiz4Company.Interface.JobType;
 using WebAPIBiz4Company.Interface.User;
+using WebAPIBiz4Company.Interface.Job;
+using WebAPIBiz4Company.Interface.JobApplier;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IJopApplierActivity, JobApplierActivity>();
+builder.Services.AddScoped<IJobActivity, JobActivity>();
 builder.Services.AddScoped<IUserActivity, UserActivity>();
+builder.Services.AddScoped<IJobTypeActivity, JobTypeActivity>();
 builder.Services.AddDbContext<WebAPIBiz4Company.Data.WEBPUBLICBETAContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("APIBiz4Database")));
 
 var app = builder.Build();

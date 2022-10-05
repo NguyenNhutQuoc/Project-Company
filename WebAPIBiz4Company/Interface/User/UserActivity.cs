@@ -4,7 +4,7 @@ using WebAPIBiz4Company.DA;
 using WebAPIBiz4Company.Interface.User;
 using WebAPIBiz4Company.Models.Dto;
 
-namespace WebAPIBiz4Company.ImplementInterface.User
+namespace WebAPIBiz4Company.Interface.User
 {
     public class UserActivity:IUserActivity
     {

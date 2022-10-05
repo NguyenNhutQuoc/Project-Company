@@ -14,12 +14,21 @@ public class TransformDto
             {
                 if (property.GetValue(t) is null)
                 {
-                    PropertyInfo properOldUser = y.GetType().GetProperties()[index];
-                    newObject.GetType().GetProperties()[index].SetValue(newObject, properOldUser.GetValue(y));
+                    PropertyInfo oldProperty = y.GetType().GetProperties()[index];
+                    newObject.GetType().GetProperties()[index].SetValue(newObject, oldProperty.GetValue(y));
                 }
                 else
                 {
-                    newObject.GetType().GetProperties()[index].SetValue(newObject, property.GetValue(t));
+                    Console.WriteLine(property.GetValue(t).GetType().Name);
+                    if (property.GetValue(t).GetType().Name.Equals("Int32"))
+                    {
+                        PropertyInfo oldProperty = y.GetType().GetProperties()[index];
+                        newObject.GetType().GetProperties()[index].SetValue(newObject, oldProperty.GetValue(y));
+                    }
+                    else
+                    {
+                        newObject.GetType().GetProperties()[index].SetValue(newObject, property.GetValue(t));
+                    }
                 }
                 index++;
             }

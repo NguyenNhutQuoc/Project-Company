@@ -6,10 +6,10 @@ namespace WebAPIBiz4Company.Models
     public partial class User
     {
         public int UserId { get; set; }
-        public string UserFullname { get; set; } = null!;
-        public string UserEmail { get; set; } = null!;
-        public string UserPhoneNumber { get; set; } = null!;
-        public string UserCompanyName { get; set; } = null!;
-        public string? UserQuestion { get; set; }
+        public string UserFullname { get; set; }
+        public string UserEmail { get; set; }
+        public string UserPhoneNumber { get; set; }
+        public string UserCompanyName { get; set; }
+        public string UserQuestion { get; set; }
     }
 }

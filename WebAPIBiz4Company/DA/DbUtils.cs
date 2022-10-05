@@ -6,7 +6,7 @@ namespace WebAPIBiz4Company.DA
 {
     public class DbUtils
     {
-        public static SqlConnection ConnectionDatabase(String connectString)
+        static SqlConnection ConnectionDatabase(String connectString)
         {
             return new SqlConnection(connectString);
         }
@@ -34,6 +34,7 @@ namespace WebAPIBiz4Company.DA
                         List<T> list = new List<T>();
                         if (dataTable is not null)
                         {
+                            Console.WriteLine("Number of row: "+dataTable.Rows.Count);
                             foreach (DataRow row in dataTable.Rows)
                             {
                                 int count = 0;
@@ -98,8 +99,6 @@ namespace WebAPIBiz4Company.DA
                 {
                     return e.Message;
                 }
-
-                return null;
             } 
         }
     }

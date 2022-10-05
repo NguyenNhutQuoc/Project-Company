@@ -1,26 +1,21 @@
 ﻿<Properties StartupConfiguration="{AC94D6C5-5D51-42AE-9879-2696301461A2}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WebAPIBiz4Company/DA/DbUtils.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebAPIBiz4Company/WebAPIBiz4Company.csproj">
     <Files>
-      <File FileName="WebAPIBiz4Company/Data/WEBPUBLICBETAContext.cs" Line="13" Column="10" />
+      <File FileName="WebAPIBiz4Company/Data/WEBPUBLICBETAContext.cs" Line="87" Column="30" />
       <File FileName="WebAPIBiz4Company/Models/Biz4.cs" Line="1" Column="1" />
       <File FileName="WebAPIBiz4Company/Models/Job.cs" Line="1" Column="1" />
       <File FileName="WebAPIBiz4Company/Models/JobApplier.cs" Line="1" Column="1" />
       <File FileName="WebAPIBiz4Company/Models/JobDescription.cs" Line="6" Column="31" />
       <File FileName="WebAPIBiz4Company/Models/JobType.cs" Line="1" Column="1" />
       <File FileName="WebAPIBiz4Company/Models/User.cs" Line="7" Column="6" />
-      <File FileName="WebAPIBiz4Company/Program.cs" Line="10" Column="35" />
+      <File FileName="WebAPIBiz4Company/Program.cs" Line="10" Column="1" />
       <File FileName="WebAPIBiz4Company/appsettings.json" Line="8" Column="23" />
       <File FileName="WebAPIBiz4Company/appsettings.Development.json" Line="1" Column="1" />
       <File FileName="WebAPIBiz4Company/WeatherForecast.cs" Line="5" Column="39" />
       <File FileName="WebAPIBiz4Company/Properties/launchSettings.json" Line="15" Column="50" />
       <File FileName="WebAPIBiz4Company/Interface/User/IUserActivity.cs" Line="6" Column="6" />
-      <File FileName="WebAPIBiz4Company/ImplementInterface/User/UserActivity.cs" Line="10" Column="1" />
       <File FileName="WebAPIBiz4Company/DA/DBUtils.cs" Line="8" Column="1" />
+      <File FileName="WebAPIBiz4Company/WebAPIBiz4Company.csproj" Line="25" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,14 +23,9 @@
           <Node name="WebAPIBiz4Company" expanded="True">
             <Node name="WebAPIBiz4Company" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="DA" expanded="True">
-                <Node name="DbUtils.cs" selected="True" />
-              </Node>
+              <Node name="DA" expanded="True" />
               <Node name="Data" expanded="True" />
-              <Node name="ImplementInterface" expanded="True">
-                <Node name="User" expanded="True" />
-              </Node>
-              <Node name="Interface" expanded="True">
+              <Node name="Interface" expanded="True" selected="True">
                 <Node name="User" expanded="True" />
               </Node>
               <Node name="Models" expanded="True" />
@@ -50,6 +40,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.WebAPIBiz4Company PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
